@@ -1,0 +1,53 @@
+.content-table{
+    width: 100%;
+}
+
+.content-table thead{
+    background-color: #b73ae9;
+    color: #f1f1f1;
+}
+
+.content-table thead th{
+    padding: 0.5rem 2rem;
+}
+
+.content-table tbody tr td{
+    padding: 0.5rem 0.5rem;
+    text-align: left;
+    font-size: 20px;
+}
+
+.btns-actions{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btns-actions button{
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.btns-actions button:first-child{
+    color: #2ecf2e;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+}
+
+.btns-actions button:last-child{
+    color: #eb2e2e;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+}
+
+.btns-actions button:first-child:hover{
+    transform: scale(1); 
+}
+
+.btns-actions button:last-child:hover{
+    transform: scale(1);
+}

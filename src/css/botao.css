@@ -1,0 +1,9 @@
+.style-default-btn{
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #5252f0 , #1414f3);
+    color: #f1f1f1;
+    font-weight: bold;
+    border: none;
+}
