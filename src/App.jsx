@@ -5,9 +5,7 @@ import EditarUsuario from "./components/EditarUsuario";
 
 import { Modal } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { deleteUser } from "./database/callFunctionsDatabase";
-
-import { showData } from "./database/callFunctionsDatabase";
+import { deleteUser, showData } from "./database/callFunctionsDatabase";
 
 import './components/Icones';
 import './css/index.css';
@@ -19,6 +17,7 @@ function App() {
   const [showModalEditarUsuario, setShowModalEditarUsuario] = useState(false);
 
   const [users, setUsers] = useState([]);
+  const [userId, setUserId] = useState("");
 
   const handleShowModalNovoUsuario = () => setShowModalNovoUsuario(true);
   const handleCloseModalNovoUsuario = () => setShowModalNovoUsuario(false);
@@ -26,9 +25,9 @@ function App() {
   const handleShowModalEditarUsuario = () => setShowModalEditarUsuario(true);
   const handleCloseModalEditarUsuario = () => setShowModalEditarUsuario(false);
 
-  function editUser(param) {
+  function editUser(id) {
+    setUserId(id);
     handleShowModalEditarUsuario();
-    console.log(users)
   }
 
 
@@ -55,7 +54,7 @@ function App() {
           <Modal.Title>Editar Usuário</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <EditarUsuario />
+          <EditarUsuario idUser={userId} />
         </Modal.Body>
       </Modal>
 

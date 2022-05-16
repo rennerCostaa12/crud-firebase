@@ -16,12 +16,22 @@ export async function addData(funcaoUser, idadeUser, nomeUser) {
             nome: nomeUser
         });
         console.log("Document written with ID", docRef.id)
-    }catch (e){
+    } catch (e) {
         console.error("Erro ao adicionar usuário: ", e);
     }
 }
 
-export async function deleteUser(id){
+export async function updateUser(id, funcaoUser, idadeUser, nomeUser) {
+    const docRef = doc(db, "users", id);
+    
+    await updateDoc(docRef, {
+        funcao: funcaoUser,
+        idade: idadeUser,
+        nome: nomeUser
+    })
+}
+
+export async function deleteUser(id) {
     await deleteDoc(doc(db, "users", id))
     alert("Usuário excluído com sucessso!")
     window.location.reload();
